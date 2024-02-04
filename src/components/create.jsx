@@ -4,16 +4,17 @@ import { AiOutlinePlus } from 'react-icons/ai';
 
 const Create = ({ value, onChange, onAdd }) => {
   return (
-    <div className="bg-white rounded-md w-[500px] min-h-[65px] flex items-center gap-4 overflow-hidden px-4">
-      <div className="w-[20px] h-[20px] rounded-full border-[1px] border-solid border-dark-grayish-blue-lightMode cursor-pointer"></div>
+    <div className="bg-white rounded-md w-[500px] h-[65px] flex items-center gap-4 overflow-hidden px-4">
       <input
         type="text"
         placeholder="Create a new todo..."
-        className="flex-1 bg-transparent flex border-none outline-none h-full text-lg font-medium text-very-dark-grayish-blue"
+        className="flex-1 bg-transparent flex items-center border-none outline-none h-full text-lg font-medium text-very-dark-grayish-blue"
         value={value}
         onChange={onChange}
       />
-      <div className="cursor-pointer" onClick={onAdd}>
+      <div className="cursor-pointer" 
+      onClick={onAdd}
+      >
         <AiOutlinePlus size={30} color="hsl(236, 9%, 61%)" />
       </div>
     </div>
@@ -21,3 +22,10 @@ const Create = ({ value, onChange, onAdd }) => {
 };
 
 export default Create;
+
+
+// Functionality
+// Plus icon onclick to submit to entry
+// Input to enter todo entry => Onchange 
+// A user is inputing todo entry that is onchange, set the value to newTodo 
+// Once the user then clicks on the plus icon, trim the todo value for trailing spaces and add it to the todos list (onAdd)

@@ -13,3 +13,7 @@ const header = () => {
 }
 
 export default header;
+
+
+// Functionality 
+// Icon div can be clicked => Onclick to change sun to moon or vice versa & change theme to light or dark

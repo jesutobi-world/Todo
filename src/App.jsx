@@ -4,7 +4,7 @@ import './App.css'
 function App() {
 
   return (
-    <div className='bg-desktop-pattern-light w-full h-auto min-h-screen bg-no-repeat mx-w-[1440px] flex items-start justify-center p-16'>
+    <div className='bg-desktop-pattern-light w-screen h-auto min-h-screen bg-no-repeat max-w-[1440px] flex items-start justify-center py-16'>
       <Container/>
     </div>
   )
