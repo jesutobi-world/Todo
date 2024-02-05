@@ -1,20 +1,27 @@
 // Todo.js
-import Check from '../images/icon-check.svg'
+import Check from '../images/icon-check.svg';
+import Cross from '../images/icon-cross.svg';
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, isCompleted, onDelete }) => {
+
   return (
-    <div className="bg-white w-[500px] h-auto min-h-[60px] flex items-center gap-4 overflow-hidden px-4 border-b border-solid border-light-grayish-blue">
-      <div className="w-[20px] h-[20px] rounded-full border-[1px] border-solid border-dark-grayish-blue-lightMode cursor-pointer bg-gradient-to-r from-left-gradient to-right-gradient flex items-center justify-center">
-        <img src={Check} alt="check icon"  />
+    <div
+      className="bg-white w-[500px] h-auto min-h-[60px] flex items-center gap-4 overflow-hidden p-4 border-b border-solid border-light-grayish-blue">
+      <div
+        className={`w-[20px] h-[20px] rounded-full border-[1px] border-solid border-dark-grayish-blue-lightMode cursor-pointer flex items-center justify-center ${
+          todo.completed ? 'bg-gradient-to-r from-left-gradient to-right-gradient border-none transition duration-900 ease-in-out' : ''
+        }`}
+        onClick={() => isCompleted(todo.id)}
+        
+      >
+        <img src={Check} alt="check icon" />
       </div>
-      <div className='flex flex-1 items-center'>
-        {todo} 
-        </div>
+      <p className={`flex flex-1 items-center text-very-dark-grayish-blue font-semibold text-lg ${todo.completed ? 'text-[#B8C6D7] line-through' : ''}`}>{todo.text}</p>
+      <div className={`w-[20px] h-[20px] cursor-pointer flex items-center justify-center`} onClick={() =>   onDelete(todo.id)}>
+        <img src={Cross} alt="cross icon" />
+      </div>
     </div>
   );
 };
 
 export default Todo;
-
-// Functionality
-// Onclick of circle show check, remove circle border and update Completed ( can be reversed so try toggle instead of add and remove with the classes and updating)
