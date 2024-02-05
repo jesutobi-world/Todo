@@ -10,7 +10,7 @@ const Create = ({ value, onChange, onAdd }) => {
   };
 
   return (
-    <div className="bg-white rounded-md w-[500px] h-[65px] flex items-center gap-4 overflow-hidden px-4">
+    <div className="bg-white rounded-md w-[90vw] lg:w-[500px] h-[65px] flex items-center gap-4 overflow-hidden px-4">
       <input
         type="text"
         placeholder="Create a new todo..."

@@ -2,11 +2,11 @@ import SunIcon from '../images/icon-sun.svg'
 import Moonicon from '../images/icon-moon.svg'
 const header = () => {
   return (
-    <div className="flex justify-between h-[70px] items-center">
-        <h1 className='text-5xl font-semibold text-white tracking-widest'>TODO</h1>
-        <div className="w-[40px] h-[40px] relative flex items-center justify-center">
+    <div className="flex justify-between h-[60px] items-center">
+        <h1 className='text-4xl font-semibold text-white tracking-widest flex items-center'>TODO</h1>
+        <div className="w-[30px] h-[30px] relative flex items-center justify-center">
             <img src={SunIcon} alt="moon-iconn" className='absolute w-full h-full' />
-            <img src={Moonicon} alt="sun-icon" className='absolte w-full h-full' />
+            <img src={Moonicon} alt="sun-icon" className='absolute w-full h-full' />
         </div>
     </div>
   )

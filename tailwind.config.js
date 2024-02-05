@@ -9,7 +9,8 @@ export default {
       backgroundImage: {
         'desktop-pattern-light': "url('./src/images/bg-desktop-light.jpg')",
         'desktop-pattern-dark': "url('./src/images/bg-desktop-dark.jpg')",
-        'mobile-pattern': "url('/img/footer-texture.png')",
+        'mobile-pattern-light': "url('./src/images/bg-mobile-light.jpg')",
+        'mobile-pattern-dark': "url('./src/images/bg-mobile-dark.jpg')",
       },
       colors:{
         // primary colors

@@ -1,15 +1,17 @@
 // Container.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './header';
 import Create from './create';
 import Todos from './todos';
 import Prompt from './prompt';
 
 const Container = () => {
+  const initialTodos = JSON.parse(localStorage.getItem('todos')) || [];
+
   // Array of Todo objects 
   // Each Todo object contains an id ( integer ), text ( string ) and completed ( boolean )
   // Updated by the addTodo function  
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(initialTodos);
 
   // To store the submitted todo text before updating the todos array
   // Updated by the handleInputChange function 
@@ -18,6 +20,12 @@ const Container = () => {
   // To store the current filter
   // Updated handleFilterChange function
   const [filter, setFilter] = useState('all');
+
+// To save todos to local storage when they change
+  useEffect(() => {
+    // Save todos to localStorage whenever they change
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   // To update the newTodo state
   const handleInputChange = (event) => {
@@ -54,7 +62,7 @@ const Container = () => {
 
 
   return (
-    <div className="w-auto h-auto flex flex-col gap-6">
+    <div className="w-[90vw] lg:w-auto lg:h-auto flex flex-col gap-6">
       <Header />
       <Create
        value={newTodo}
