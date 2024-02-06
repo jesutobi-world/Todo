@@ -1,5 +1,5 @@
 // Container.js
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './header';
 import Create from './create';
 import Todos from './todos';

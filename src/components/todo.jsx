@@ -1,6 +1,6 @@
 // Todo.js
-import Check from '../images/icon-check.svg';
-import Cross from '../images/icon-cross.svg';
+import Check from '../assets/images/icon-check.svg';
+import Cross from '../assets/images/icon-cross.svg';
 
 const Todo = ({ todo, isCompleted, onDelete }) => {
 
