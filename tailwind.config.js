@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'desktop-pattern-light': "url('./src/assets/images/bg-desktop-light.jpg')",
-        'desktop-pattern-dark': "url('./src/assets/images/bg-desktop-dark.jpg')",
-        'mobile-pattern-light': "url('./src/assets/images/bg-mobile-light.jpg')",
-        'mobile-pattern-dark': "url('./src/assets/images/bg-mobile-dark.jpg')",
+        'desktop-pattern-light': "url('/images/bg-desktop-light.jpg')",
+        'desktop-pattern-dark': "url('/images/bg-desktop-dark.jpg')",
+        'mobile-pattern-light': "url('/images/bg-mobile-light.jpg')",
+        'mobile-pattern-dark': "url('/images/bg-mobile-dark.jpg')",
       },
       colors:{
         // primary colors

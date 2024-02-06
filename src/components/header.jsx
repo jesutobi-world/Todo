@@ -1,5 +1,5 @@
-import SunIcon from '../assets/images/icon-sun.svg'
-import Moonicon from '../assets/images/icon-moon.svg'
+import SunIcon from '/images/icon-sun.svg'
+import Moonicon from '/images/icon-moon.svg'
 const header = () => {
   return (
     <div className="flex justify-between h-[60px] items-center">
