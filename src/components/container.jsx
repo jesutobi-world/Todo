@@ -9,6 +9,7 @@ import {
   KeyboardSensor,
   PointerSensor,
   useSensor,
+  TouchSensor,
   useSensors,
 } from '@dnd-kit/core'
 
@@ -85,6 +86,7 @@ const Container = () => {
 
     const sensors = useSensors(
       useSensor(PointerSensor),
+      useSensor(TouchSensor),
       useSensor(KeyboardSensor, {
         coordinateGetter: sortableKeyboardCoordinates,
       })
