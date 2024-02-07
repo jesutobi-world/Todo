@@ -30,7 +30,7 @@ const Todos = ({ todos, isCompleted, onDelete, onFilterChange, filter, onClear, 
   return (
     <div className="flex flex-col overflow-hidden rounded-md h-auto shadow-xl">
       <DndContext collisionDetection={closestCorners} onDragEnd={handleDragEnd} sensors={sensors}> 
-        <Column todos={todos} filteredTodos={filteredTodos} />
+        <Column todos={todos} filteredTodos={filteredTodos} filter={filter} />
       </DndContext>
       <Info
         filteredTodos={filteredTodos}
