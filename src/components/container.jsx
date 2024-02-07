@@ -4,6 +4,13 @@ import Header from './header';
 import Create from './create';
 import Todos from './todos';
 import Prompt from './prompt';
+import {arrayMove, sortableKeyboardCoordinates} from '@dnd-kit/sortable'
+import {
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core'
 
 const Container = () => {
   const initialTodos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -61,6 +68,29 @@ const Container = () => {
     setFilter(selectedFilter);  }
 
 
+    const getTodoPos = (id) => todos.findIndex((todo) => todo.id === id);
+
+    const handleDragEnd = (event) => {
+      const { active, over } = event;
+  
+      if (active.id === over.id) return;
+  
+      setTodos((todos) => {
+        const originalPos = getTodoPos(active.id);
+        const newPos = getTodoPos(over.id);
+  
+        return arrayMove(todos, originalPos, newPos);
+      });
+    };
+
+    const sensors = useSensors(
+      useSensor(PointerSensor),
+      useSensor(KeyboardSensor, {
+        coordinateGetter: sortableKeyboardCoordinates,
+      })
+    );
+
+
   return (
     <div className="w-[90vw] lg:w-auto lg:h-auto flex flex-col gap-6">
       <Header />
@@ -76,6 +106,8 @@ const Container = () => {
        onClear = {onClear}
        onFilterChange = {handleFilterChange}
        filter={filter}
+       handleDragEnd={handleDragEnd}
+       sensors={sensors}
         />
       <Prompt />
     </div>
